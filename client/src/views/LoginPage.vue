@@ -1,10 +1,13 @@
 <script>
 import { mapActions } from 'pinia'
 import { useCounterStore } from '../stores/counter'
-
+import VFacebook from '../components/VFacebook.vue'
 
 export default {
     name: "LoginPage",
+    components: {
+        VFacebook
+    },
     data() {
         return {
             email: "",
@@ -110,6 +113,8 @@ export default {
 
                         <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
                         </fb:login-button>
+
+                        <VFacebook />
 
                     </form>
                 </div>
